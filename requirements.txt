@@ -1,0 +1,29 @@
+# PyTorch is NOT listed here on purpose: the RTX 50-series needs the CUDA 12.8+ build,
+# which setup.bat installs first from the PyTorch cu128 index. See docs/SETUP.md.
+
+# UI + config
+gradio>=4.44
+pyyaml>=6.0
+requests>=2.31
+pillow>=10.0
+numpy>=1.26
+
+# Audio
+soundfile>=0.12
+scipy>=1.11
+
+# Image / video models (Hugging Face diffusers stack)
+diffusers>=0.35
+transformers>=4.45
+accelerate>=0.34
+safetensors>=0.4
+peft>=0.12            # LoRA loading for character consistency
+sentencepiece
+protobuf
+ftfy
+imageio>=2.34
+imageio-ffmpeg>=0.5   # also provides a fallback ffmpeg binary
+
+# Voices (English / Hindi / others supported by Kokoro)
+kokoro>=0.9
+misaki[en]

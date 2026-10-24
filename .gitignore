@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Model downloads / caches
+.cache/
+models/
+*.safetensors
+*.ckpt
+*.gguf
+*.bin
+
+# Your own projects stay on your machine (the example project is kept)
+projects/*
+!projects/example/
+projects/example/work/
+projects/example/output/
+projects/example/assets/
+
+# Generated media
+*.mp4
+*.wav
+*.mp3
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

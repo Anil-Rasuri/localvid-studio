@@ -1,0 +1,23 @@
+# Example story: "The Golden Banana" (11 shots, roughly 45 seconds)
+# Format: SCENE lines say what we see, NAME: lines are spoken dialogue.
+SCENE: Wide shot of a sunny jungle clearing at sunrise. Bobo and Mimi sit side by side on a tree branch.
+Bobo: What a beautiful morning!
+Mimi: And I am very hungry.
+SCENE: Close-up of Bobo's face as he sniffs the air and smiles.
+Bobo: I smell bananas!
+SCENE: Bobo and Mimi swing from vine to vine through the trees, leaves flying past.
+SCENE: The two monkeys stop at a tall banana tree with one golden banana at the very top.
+Mimi: Only one banana?
+SCENE: Bobo tries to climb the trunk, slips, and lands on his back in the grass.
+Bobo: Ouch!
+SCENE: Mimi laughs, then points up at the golden banana.
+Mimi: Let's do it together.
+SCENE: Mimi stands on Bobo's shoulders and stretches her arm toward the banana.
+Mimi: Almost there...
+SCENE: Mimi grabs the golden banana and holds it high in triumph.
+Mimi: I got it!
+SCENE: Mimi breaks the banana in half and hands one half to Bobo.
+Mimi: Half for you.
+SCENE: Bobo and Mimi sit side by side eating bananas with the sun shining behind them.
+Bobo: Best friends share everything.
+SCENE: Wide shot of the jungle in golden light, the two monkeys small on a branch.

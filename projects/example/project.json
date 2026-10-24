@@ -1,0 +1,286 @@
+{
+  "name": "The Golden Banana",
+  "style": "2D cartoon animation, bright saturated colors, clean outlines, lush jungle background, consistent character design",
+  "negative": "",
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "seed": 1234,
+  "subtitles": true,
+  "script": "# Example story: \"The Golden Banana\" (11 shots, roughly 45 seconds)\n# Format: SCENE lines say what we see, NAME: lines are spoken dialogue.\nSCENE: Wide shot of a sunny jungle clearing at sunrise. Bobo and Mimi sit side by side on a tree branch.\nBobo: What a beautiful morning!\nMimi: And I am very hungry.\nSCENE: Close-up of Bobo's face as he sniffs the air and smiles.\nBobo: I smell bananas!\nSCENE: Bobo and Mimi swing from vine to vine through the trees, leaves flying past.\nSCENE: The two monkeys stop at a tall banana tree with one golden banana at the very top.\nMimi: Only one banana?\nSCENE: Bobo tries to climb the trunk, slips, and lands on his back in the grass.\nBobo: Ouch!\nSCENE: Mimi laughs, then points up at the golden banana.\nMimi: Let's do it together.\nSCENE: Mimi stands on Bobo's shoulders and stretches her arm toward the banana.\nMimi: Almost there...\nSCENE: Mimi grabs the golden banana and holds it high in triumph.\nMimi: I got it!\nSCENE: Mimi breaks the banana in half and hands one half to Bobo.\nMimi: Half for you.\nSCENE: Bobo and Mimi sit side by side eating bananas with the sun shining behind them.\nBobo: Best friends share everything.\nSCENE: Wide shot of the jungle in golden light, the two monkeys small on a branch.\n",
+  "characters": [
+    {
+      "name": "Bobo",
+      "description": "a small brown monkey with a round face, big dark eyes, cream-colored muzzle and a red scarf",
+      "reference_image": "",
+      "lora_path": "",
+      "voice": {
+        "backend": "kokoro",
+        "voice_id": "am_adam",
+        "lang": "",
+        "speed": 1.0,
+        "ref_audio": "",
+        "ref_text": ""
+      }
+    },
+    {
+      "name": "Mimi",
+      "description": "a small light-grey monkey with a round face, big green eyes, and a yellow flower behind one ear",
+      "reference_image": "",
+      "lora_path": "",
+      "voice": {
+        "backend": "kokoro",
+        "voice_id": "af_heart",
+        "lang": "",
+        "speed": 1.0,
+        "ref_audio": "",
+        "ref_text": ""
+      }
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "visual": "Wide shot of a sunny jungle clearing at sunrise. Bobo and Mimi sit side by side on a tree branch.",
+      "dialogue": [
+        {
+          "speaker": "Bobo",
+          "text": "What a beautiful morning!",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        },
+        {
+          "speaker": "Mimi",
+          "text": "And I am very hungry.",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Bobo",
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1235
+    },
+    {
+      "id": 2,
+      "visual": "Close-up of Bobo's face as he sniffs the air and smiles.",
+      "dialogue": [
+        {
+          "speaker": "Bobo",
+          "text": "I smell bananas!",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Bobo"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1236
+    },
+    {
+      "id": 3,
+      "visual": "Bobo and Mimi swing from vine to vine through the trees, leaves flying past.",
+      "dialogue": [],
+      "characters": [
+        "Bobo",
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1237
+    },
+    {
+      "id": 4,
+      "visual": "The two monkeys stop at a tall banana tree with one golden banana at the very top.",
+      "dialogue": [
+        {
+          "speaker": "Mimi",
+          "text": "Only one banana?",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1238
+    },
+    {
+      "id": 5,
+      "visual": "Bobo tries to climb the trunk, slips, and lands on his back in the grass.",
+      "dialogue": [
+        {
+          "speaker": "Bobo",
+          "text": "Ouch!",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Bobo"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1239
+    },
+    {
+      "id": 6,
+      "visual": "Mimi laughs, then points up at the golden banana.",
+      "dialogue": [
+        {
+          "speaker": "Mimi",
+          "text": "Let's do it together.",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1240
+    },
+    {
+      "id": 7,
+      "visual": "Mimi stands on Bobo's shoulders and stretches her arm toward the banana.",
+      "dialogue": [
+        {
+          "speaker": "Mimi",
+          "text": "Almost there...",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Mimi",
+        "Bobo"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1241
+    },
+    {
+      "id": 8,
+      "visual": "Mimi grabs the golden banana and holds it high in triumph.",
+      "dialogue": [
+        {
+          "speaker": "Mimi",
+          "text": "I got it!",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1242
+    },
+    {
+      "id": 9,
+      "visual": "Mimi breaks the banana in half and hands one half to Bobo.",
+      "dialogue": [
+        {
+          "speaker": "Mimi",
+          "text": "Half for you.",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Mimi",
+        "Bobo"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1243
+    },
+    {
+      "id": 10,
+      "visual": "Bobo and Mimi sit side by side eating bananas with the sun shining behind them.",
+      "dialogue": [
+        {
+          "speaker": "Bobo",
+          "text": "Best friends share everything.",
+          "audio_path": "",
+          "start": 0.0,
+          "duration": 0.0
+        }
+      ],
+      "characters": [
+        "Bobo",
+        "Mimi"
+      ],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1244
+    },
+    {
+      "id": 11,
+      "visual": "Wide shot of the jungle in golden light, the two monkeys small on a branch.",
+      "dialogue": [],
+      "characters": [],
+      "user_keyframe": "",
+      "keyframe_path": "",
+      "clip_path": "",
+      "audio_path": "",
+      "audio_duration": 0.0,
+      "seed": 1245
+    }
+  ],
+  "music": {
+    "mode": "generate",
+    "prompt": "gentle playful acoustic jungle adventure music, ukulele and marimba, light and cheerful",
+    "file": "",
+    "volume": 0.18,
+    "duck": true
+  }
+}

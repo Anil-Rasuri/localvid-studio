@@ -1,0 +1,25 @@
+# LocalVid Studio settings. Only the options you are likely to change are listed;
+# everything else has a built-in default (see studio/config.py).
+
+device: cuda        # cuda or cpu
+low_vram: true      # CPU offload so 8 GB GPUs can run the big models. Set false only on 16 GB+ cards.
+
+keyframes:          # the first image of every shot
+  backend: sdxl     # sdxl = generate images | none = only use images you upload
+  steps: 28
+
+clips:              # image -> short video
+  backend: ltx      # ltx | wan (experimental) | kenburns (no AI: slow zoom over the image, always works)
+  long_side: 640    # pixels of the long side. If you run out of GPU memory try 512.
+  max_frames: 121   # 121 frames at 24 fps is about 5 seconds
+  fallback_on_error: true   # if an AI clip fails, use a camera-move clip instead of stopping
+
+shot:
+  min_seconds: 3.0
+  max_seconds: 5.0
+
+llm:                # optional script writer (Ollama must be running)
+  model: qwen2.5:7b
+
+music:
+  max_generate_seconds: 30
