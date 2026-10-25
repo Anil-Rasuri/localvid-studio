@@ -39,7 +39,7 @@ DEFAULT_CONFIG: dict = {
         "negative": "blurry, low quality, deformed, extra limbs, text, watermark, inconsistent character",
     },
     "clips": {
-        "backend": "ltx",      # ltx | wan | kenburns
+        "backend": "cutout",   # cutout (your character images animated on AI backgrounds) | ltx | wan | kenburns
         "model": "Lightricks/LTX-Video",
         "long_side": 640,      # lower to 512 if you run out of GPU memory
         "fps": 24,
@@ -49,6 +49,11 @@ DEFAULT_CONFIG: dict = {
         "max_frames": 121,
         "motion_suffix": "subtle natural motion, stable camera, consistent character appearance",
         "negative": "worst quality, inconsistent motion, blurry, jittery, distorted, morphing, changing character",
+        "cutout": {
+            "char_height": 0.58,   # character height as a fraction of the video height
+            "ground": 0.86,        # where the characters' feet stand (fraction of video height)
+            "tolerance": 55,       # how different from the border colour counts as 'character' (0-255 scale)
+        },
         "fallback_on_error": True,   # if the AI clip fails (e.g. out of memory) use a camera-move clip instead
         "wan": {               # experimental backend
             "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",

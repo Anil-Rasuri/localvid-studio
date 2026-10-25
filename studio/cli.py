@@ -16,8 +16,14 @@ from .project import Project
 from .script import assign_seeds, ensure_characters, parse_script
 
 
-def _drop_cached(project: Project, folder: str, shot_id: int, suffix: str) -> None:
-    (project.root / folder / f"shot_{shot_id:02d}{suffix}").unlink(missing_ok=True)
+def _drop_cached(project: Project, kind: str, shot_id: int) -> None:
+    """Delete saved images ('image') or clips ('clip') of a shot, whichever backend made them."""
+    work = project.root / "work"
+    names = ("keyframes", "backgrounds") if kind == "image" else tuple(
+        d.name for d in work.glob("clips*") if d.is_dir())
+    for name in names:
+        for f in (work / name).glob(f"shot_{shot_id:02d}.*"):
+            f.unlink(missing_ok=True)
 
 
 def build_shots(project: Project, text: str) -> list[str]:
@@ -41,12 +47,12 @@ def build_shots(project: Project, text: str) -> list[str]:
         if same_all:
             shot.clip_path = prev.clip_path
         if not same_scene:
-            _drop_cached(project, "work/keyframes", shot.id, ".png")
+            _drop_cached(project, "image", shot.id)
         if not same_all:
-            _drop_cached(project, "work/clips", shot.id, ".mp4")
+            _drop_cached(project, "clip", shot.id)
     for sid in set(old) - {s.id for s in project.shots}:  # shots that no longer exist
-        _drop_cached(project, "work/keyframes", sid, ".png")
-        _drop_cached(project, "work/clips", sid, ".mp4")
+        _drop_cached(project, "image", sid)
+        _drop_cached(project, "clip", sid)
     project.save()
     return added
 

@@ -14,7 +14,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 from .project import Project, Shot
-from .prompts import keyframe_prompt
+from .prompts import BG_NEGATIVE, background_prompt, keyframe_prompt
 from .util import fit_cover, fit_size, free_gpu
 
 
@@ -41,6 +41,7 @@ class KeyframeGenerator:
         self.size = fit_size(project.width, project.height, self.k["long_side"], 8)
         self.pipe = None
         self._loras: dict[str, str] = {}
+        self.bg_mode = cfg["clips"]["backend"] == "cutout"   # background-only images
 
     # -------------------------------------------------------- helpers
     def _references(self, shot: Shot) -> list[Path]:
@@ -65,7 +66,7 @@ class KeyframeGenerator:
         if k.get("vae"):
             kwargs["vae"] = AutoencoderKL.from_pretrained(k["vae"], torch_dtype=dtype)
         pipe = StableDiffusionXLPipeline.from_pretrained(k["model"], **kwargs)
-        if k["use_ip_adapter"]:
+        if k["use_ip_adapter"] and not self.bg_mode:
             pipe.load_ip_adapter(k["ip_adapter_repo"], subfolder=k["ip_adapter_subfolder"],
                                  weight_name=k["ip_adapter_weight"])
         if self.cfg["low_vram"]:
@@ -98,9 +99,12 @@ class KeyframeGenerator:
         out_path = Path(out_path)
         w, h = self.size
 
-        if shot.user_keyframe:  # 1) your own image wins
+        if shot.user_keyframe:  # 1) your own image wins (in cutout mode it is used as the background)
             fit_cover(Image.open(self.p.abs(shot.user_keyframe)), w, h).save(out_path)
             return out_path
+
+        if self.bg_mode:  # cutout mode: paint ONLY the background, characters are added later
+            return self._background(shot, out_path, w, h)
 
         refs = self._references(shot)
         if self.k["backend"] == "none":
@@ -132,6 +136,25 @@ class KeyframeGenerator:
                 self.pipe.set_ip_adapter_scale(0.0)
                 kwargs["ip_adapter_image"] = Image.new("RGB", (224, 224), "gray")
         self.pipe(**kwargs).images[0].save(out_path)
+        return out_path
+
+    def _background(self, shot: Shot, out_path: Path, w: int, h: int) -> Path:
+        if self.k["backend"] == "none":
+            from .cutout import plain_background
+
+            plain_background(w, h).save(out_path)
+            return out_path
+        import torch
+
+        self._load()
+        self.pipe(
+            prompt=background_prompt(self.p, shot),
+            negative_prompt=(self.p.negative + ", " if self.p.negative else "") + BG_NEGATIVE + ", " + self.k["negative"],
+            width=w, height=h,
+            num_inference_steps=self.k["steps"],
+            guidance_scale=self.k["guidance"],
+            generator=torch.Generator("cpu").manual_seed(shot.seed),
+        ).images[0].save(out_path)
         return out_path
 
     def unload(self) -> None:

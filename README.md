@@ -12,7 +12,7 @@ idea / script ──► shots ──► voices ──► keyframe images ──�
 ## What it does
 
 - **Any story, any style.** You define a cast (name, look, reference image, voice) and write or generate a script. Monkeys, robots, kids' tales, anything.
-- **Characters stay the same.** The look text and reference image of each character are applied to every shot. A character LoRA or your own per-shot images give even stronger control.
+- **Characters stay exactly the same (cutout mode, default).** The AI paints only the *background*; your own character images are cut out and animated on top (idle sway, bounce while speaking, camera move), so a character cannot change between shots. Fully AI-animated clips (`ltx`, `wan`) are available but characters can drift.
 - **Voices stay the same.** One fixed voice per character, loudness-matched, cached so re-runs never change them. You can clone a voice from a short clip (experimental).
 - **One music track for the whole video.** Generate it from a prompt, or use your own song. It is automatically lowered while someone speaks.
 - **Subtitles** burned in (optional), **one-shot redo** for any shot you don't like, and every stage is **cached** so you never redo finished work.
@@ -47,7 +47,7 @@ Each `SCENE:` becomes one 3-5 second clip. `NAME:` lines are spoken by that char
 
 | What | How it stays the same |
 |---|---|
-| Look | Fixed style text + each character's description in **every** prompt; reference image through IP-Adapter; optional character **LoRA**; or **your own image** for any shot (always used as-is) |
+| Look | **Cutout mode: your own character images are pasted into every frame, so they cannot change.** In the fully-AI modes: fixed style text + each character's description in **every** prompt; reference image through IP-Adapter; optional character **LoRA**; or **your own image** for any shot (always used as-is) |
 | Voice | One Kokoro voice id (or one reference clip) per character; every line loudness-normalised; cached by voice + text |
 | Music | One track for the whole video: your own file, or one generated track looped, with a fade in/out |
 | Motion | Each clip starts from its keyframe and uses a "stable character" motion prompt; short clips limit drift |

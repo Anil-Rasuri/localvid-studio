@@ -8,8 +8,12 @@ keyframes:          # the first image of every shot
   backend: sdxl     # sdxl = generate images | none = only use images you upload
   steps: 28
 
-clips:              # image -> short video
-  backend: ltx      # ltx | wan (experimental) | kenburns (no AI: slow zoom over the image, always works)
+clips:              # how each shot is animated
+  backend: cutout   # cutout = YOUR character images on AI backgrounds (characters never change)
+                    # ltx | wan = fully AI-animated (characters can drift) | kenburns = slow zoom on one image
+  cutout:
+    char_height: 0.58   # character size (fraction of video height)
+    ground: 0.86        # where the feet stand (fraction of video height)
   long_side: 640    # pixels of the long side. If you run out of GPU memory try 512.
   max_frames: 121   # 121 frames at 24 fps is about 5 seconds
   fallback_on_error: true   # if an AI clip fails, use a camera-move clip instead of stopping

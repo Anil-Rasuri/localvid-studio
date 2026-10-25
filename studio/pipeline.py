@@ -32,6 +32,8 @@ class Pipeline:
     def shot_seconds(self, shot: Shot) -> float:
         s = self.cfg["shot"]
         need = shot.audio_duration + s["tail_pad"] if shot.audio_duration else 0.0
+        if self.cfg["clips"]["backend"] == "cutout":   # no AI clip length limit: fit the dialogue
+            return min(max(need, s["min_seconds"]), 20.0)
         return min(max(need, s["min_seconds"]), s["max_seconds"])
 
     def _targets(self, only: list[int] | None) -> list[Shot]:
@@ -55,7 +57,7 @@ class Pipeline:
         if not all(s.seed for s in self.p.shots):
             assign_seeds(self.p)
         gen = KeyframeGenerator(self.p, self.cfg)
-        out_dir = self.p.dir("work/keyframes")
+        out_dir = self.p.dir("work/backgrounds" if self.cfg["clips"]["backend"] == "cutout" else "work/keyframes")
         shots = self._targets(only)
         try:
             for i, shot in enumerate(shots):
@@ -75,12 +77,12 @@ class Pipeline:
         from .util import fit_size as _fit
 
         gen = ClipGenerator(self.p, self.cfg)
-        out_dir = self.p.dir("work/clips")
+        out_dir = self.p.dir(f"work/clips_{gen.backend}")
         shots = self._targets(only)
         try:
             for i, shot in enumerate(shots):
                 path = out_dir / f"shot_{shot.id:02d}.mp4"
-                if path.exists() and not force:
+                if path.exists() and not force and gen.backend != "cutout":  # cutout renders in seconds: always fresh
                     shot.clip_path = self.p.rel(path)
                     continue
                 kf = self.p.abs(shot.keyframe_path) if shot.keyframe_path else None
@@ -91,7 +93,7 @@ class Pipeline:
                 try:
                     gen.generate(shot, kf, path, seconds)
                 except Exception as exc:  # noqa: BLE001
-                    if gen.backend == "kenburns" or not self.cfg["clips"]["fallback_on_error"]:
+                    if gen.backend in ("kenburns", "cutout") or not self.cfg["clips"]["fallback_on_error"]:
                         raise
                     self.log(f"  AI clip failed for shot {shot.id} ({type(exc).__name__}: {str(exc)[:160]}). "
                              "Using a camera-move clip instead.")

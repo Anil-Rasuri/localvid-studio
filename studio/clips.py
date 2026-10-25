@@ -71,6 +71,10 @@ class ClipGenerator:
         """Write the clip to out_path and return its duration in seconds."""
         out_path = Path(out_path)
         c = self.c
+        if self.backend == "cutout":
+            from .cutout import render_cutout_clip
+
+            return render_cutout_clip(self.p, self.cfg, shot, keyframe, out_path, seconds)
         if self.backend == "kenburns":
             w, h = fit_size(self.p.width, self.p.height, 1280, 2)
             ken_burns(keyframe, out_path, seconds, w, h, self.p.fps, variant=shot.id)

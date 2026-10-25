@@ -18,6 +18,21 @@ def character_text(project: Project, shot: Shot) -> list[str]:
     return out
 
 
+BG_NEGATIVE = "character, person, people, animal, creature, monkey, figure, face, text, watermark"
+
+
+def background_prompt(project: Project, shot: Shot) -> str:
+    """Prompt for a background with nobody in it (cutout mode): the scene text minus character names."""
+    import re
+
+    scene = shot.visual
+    for c in project.characters:
+        scene = re.sub(rf"\b{re.escape(c.name)}(?:'s)?\b", "", scene, flags=re.IGNORECASE)
+    scene = re.sub(r"\b(close-?up|wide shot)\b( of)?", "", scene, flags=re.IGNORECASE)
+    scene = re.sub(r"\s{2,}", " ", scene).strip(" ,.")
+    return _join([project.style, "empty background scenery, no characters, no animals, no people, wide view", scene])
+
+
 def keyframe_prompt(project: Project, shot: Shot) -> str:
     return _join([project.style, *character_text(project, shot), shot.visual])
 

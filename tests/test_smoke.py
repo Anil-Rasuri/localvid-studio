@@ -79,3 +79,25 @@ def test_end_to_end_without_ai_models(tmp_path):
     info = subprocess.run([ffmpeg_exe(), "-hide_banner", "-i", str(final)], capture_output=True, text=True).stderr
     assert re.search(r"Video: h264", info) and re.search(r"Audio: aac", info)
     assert (root / "work" / "shots" / "subs.srt").exists()
+
+
+@pytest.mark.skipif(shutil.which("ffmpeg") is None, reason="ffmpeg not installed")
+def test_cutout_mode_keeps_characters_identical(tmp_path):
+    from studio.cutout import load_cutout
+
+    root = tmp_path / "proj"
+    proj = Project.create("cut", root=root, width=640, height=360, fps=24)
+    for name, color in (("Bobo", (200, 90, 40)), ("Mimi", (60, 100, 170))):
+        img = root / "assets" / f"{name}.png"
+        img.parent.mkdir(parents=True, exist_ok=True)
+        _picture(img, color)
+        proj.characters.append(Character(name=name, reference_image=f"assets/{name}.png",
+                                         voice=Voice(backend="silent")))
+    build_shots(proj, SCRIPT)
+    cfg = load_config()
+    cfg["keyframes"]["backend"] = "none"   # plain background, no AI model
+    assert cfg["clips"]["backend"] == "cutout"
+    final = Pipeline(proj, cfg).run_all()
+    assert final.exists() and media_duration(final) > 5
+    cut = load_cutout(proj, proj.character("Bobo"), cfg)
+    assert cut.mode == "RGBA" and cut.getchannel("A").getextrema()[0] == 0  # background became transparent

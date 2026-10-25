@@ -10,7 +10,17 @@
 
 Output: `projects/<name>/output/final.mp4`. Intermediate files are in `projects/<name>/work/`.
 
-## Getting the most consistent characters
+## Cutout mode (default): characters that never change
+
+`clips.backend: cutout` paints only the backgrounds with AI and animates **your character images** on top.
+
+- Give each character **one clean picture of a single character** on a plain (white/light) or transparent background. The app removes the background automatically; if the picture holds several figures, the largest is used. A transparent PNG gives the cleanest edges.
+- Movement is simple "puppet" animation: idle sway, a bounce timed to the voice while the character speaks, a pop-in at the start, a slow camera move. There is no body or lip animation.
+- Characters named in a shot's `SCENE:` text or speaking in it appear, spread evenly across the screen. `Close-up` makes them larger and `Wide shot` smaller.
+- Use `Redo everything` after changing a character image. Backgrounds are made without characters, so write scenes as places ("jungle clearing at sunrise").
+- Want your own background for a shot? Upload it as that shot's image in tab 5.
+
+## Getting the most consistent characters (fully-AI modes)
 
 Roughly from most to least reliable:
 
