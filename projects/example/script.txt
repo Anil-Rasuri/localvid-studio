@@ -20,4 +20,4 @@ SCENE: Mimi breaks the banana in half and hands one half to Bobo.
 Mimi: Half for you.
 SCENE: Bobo and Mimi sit side by side eating bananas with the sun shining behind them.
 Bobo: Best friends share everything.
-SCENE: Wide shot of the jungle in golden light, the two monkeys small on a branch.
+SCENE: Wide shot of the jungle in golden light, Bobo and Mimi small on a branch.

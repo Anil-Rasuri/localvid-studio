@@ -7,12 +7,12 @@
   "fps": 24,
   "seed": 1234,
   "subtitles": true,
-  "script": "# Example story: \"The Golden Banana\" (11 shots, roughly 45 seconds)\n# Format: SCENE lines say what we see, NAME: lines are spoken dialogue.\nSCENE: Wide shot of a sunny jungle clearing at sunrise. Bobo and Mimi sit side by side on a tree branch.\nBobo: What a beautiful morning!\nMimi: And I am very hungry.\nSCENE: Close-up of Bobo's face as he sniffs the air and smiles.\nBobo: I smell bananas!\nSCENE: Bobo and Mimi swing from vine to vine through the trees, leaves flying past.\nSCENE: The two monkeys stop at a tall banana tree with one golden banana at the very top.\nMimi: Only one banana?\nSCENE: Bobo tries to climb the trunk, slips, and lands on his back in the grass.\nBobo: Ouch!\nSCENE: Mimi laughs, then points up at the golden banana.\nMimi: Let's do it together.\nSCENE: Mimi stands on Bobo's shoulders and stretches her arm toward the banana.\nMimi: Almost there...\nSCENE: Mimi grabs the golden banana and holds it high in triumph.\nMimi: I got it!\nSCENE: Mimi breaks the banana in half and hands one half to Bobo.\nMimi: Half for you.\nSCENE: Bobo and Mimi sit side by side eating bananas with the sun shining behind them.\nBobo: Best friends share everything.\nSCENE: Wide shot of the jungle in golden light, the two monkeys small on a branch.\n",
+  "script": "# Example story: \"The Golden Banana\" (11 shots, roughly 45 seconds)\n# Format: SCENE lines say what we see, NAME: lines are spoken dialogue.\nSCENE: Wide shot of a sunny jungle clearing at sunrise. Bobo and Mimi sit side by side on a tree branch.\nBobo: What a beautiful morning!\nMimi: And I am very hungry.\nSCENE: Close-up of Bobo's face as he sniffs the air and smiles.\nBobo: I smell bananas!\nSCENE: Bobo and Mimi swing from vine to vine through the trees, leaves flying past.\nSCENE: The two monkeys stop at a tall banana tree with one golden banana at the very top.\nMimi: Only one banana?\nSCENE: Bobo tries to climb the trunk, slips, and lands on his back in the grass.\nBobo: Ouch!\nSCENE: Mimi laughs, then points up at the golden banana.\nMimi: Let's do it together.\nSCENE: Mimi stands on Bobo's shoulders and stretches her arm toward the banana.\nMimi: Almost there...\nSCENE: Mimi grabs the golden banana and holds it high in triumph.\nMimi: I got it!\nSCENE: Mimi breaks the banana in half and hands one half to Bobo.\nMimi: Half for you.\nSCENE: Bobo and Mimi sit side by side eating bananas with the sun shining behind them.\nBobo: Best friends share everything.\nSCENE: Wide shot of the jungle in golden light, Bobo and Mimi small on a branch.\n",
   "characters": [
     {
       "name": "Bobo",
       "description": "a small brown monkey with a round face, big dark eyes, cream-colored muzzle and a red scarf",
-      "reference_image": "",
+      "reference_image": "assets/Gemini_Generated_Image_qwiccnqwiccnqwic.png",
       "lora_path": "",
       "voice": {
         "backend": "kokoro",
@@ -26,7 +26,7 @@
     {
       "name": "Mimi",
       "description": "a small light-grey monkey with a round face, big green eyes, and a yellow flower behind one ear",
-      "reference_image": "",
+      "reference_image": "assets/Gemini_Generated_Image_fp08jsfp08jsfp08.png",
       "lora_path": "",
       "voice": {
         "backend": "kokoro",
@@ -46,16 +46,16 @@
         {
           "speaker": "Bobo",
           "text": "What a beautiful morning!",
-          "audio_path": "",
+          "audio_path": "work/audio/shot01_line01_79eb6a7e.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 2.15
         },
         {
           "speaker": "Mimi",
           "text": "And I am very hungry.",
-          "audio_path": "",
-          "start": 0.0,
-          "duration": 0.0
+          "audio_path": "work/audio/shot01_line02_bc1f5b6c.wav",
+          "start": 2.5,
+          "duration": 2.0
         }
       ],
       "characters": [
@@ -63,10 +63,10 @@
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_01.png",
+      "clip_path": "work/clips/shot_01.mp4",
+      "audio_path": "work/audio/shot01.wav",
+      "audio_duration": 4.5,
       "seed": 1235
     },
     {
@@ -76,19 +76,19 @@
         {
           "speaker": "Bobo",
           "text": "I smell bananas!",
-          "audio_path": "",
+          "audio_path": "work/audio/shot02_line01_980ec651.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 2.025
         }
       ],
       "characters": [
         "Bobo"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_02.png",
+      "clip_path": "work/clips/shot_02.mp4",
+      "audio_path": "work/audio/shot02.wav",
+      "audio_duration": 2.025,
       "seed": 1236
     },
     {
@@ -100,8 +100,8 @@
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
+      "keyframe_path": "work/keyframes/shot_03.png",
+      "clip_path": "work/clips/shot_03.mp4",
       "audio_path": "",
       "audio_duration": 0.0,
       "seed": 1237
@@ -113,19 +113,19 @@
         {
           "speaker": "Mimi",
           "text": "Only one banana?",
-          "audio_path": "",
+          "audio_path": "work/audio/shot04_line01_d10d2ee5.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.875
         }
       ],
       "characters": [
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_04.png",
+      "clip_path": "work/clips/shot_04.mp4",
+      "audio_path": "work/audio/shot04.wav",
+      "audio_duration": 1.875,
       "seed": 1238
     },
     {
@@ -135,19 +135,19 @@
         {
           "speaker": "Bobo",
           "text": "Ouch!",
-          "audio_path": "",
+          "audio_path": "work/audio/shot05_line01_9fb4cba8.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.1
         }
       ],
       "characters": [
         "Bobo"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_05.png",
+      "clip_path": "work/clips/shot_05.mp4",
+      "audio_path": "work/audio/shot05.wav",
+      "audio_duration": 1.1,
       "seed": 1239
     },
     {
@@ -157,19 +157,19 @@
         {
           "speaker": "Mimi",
           "text": "Let's do it together.",
-          "audio_path": "",
+          "audio_path": "work/audio/shot06_line01_ae8044fd.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.8
         }
       ],
       "characters": [
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_06.png",
+      "clip_path": "work/clips/shot_06.mp4",
+      "audio_path": "work/audio/shot06.wav",
+      "audio_duration": 1.8,
       "seed": 1240
     },
     {
@@ -179,9 +179,9 @@
         {
           "speaker": "Mimi",
           "text": "Almost there...",
-          "audio_path": "",
+          "audio_path": "work/audio/shot07_line01_c974cdf1.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.6
         }
       ],
       "characters": [
@@ -189,10 +189,10 @@
         "Bobo"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_07.png",
+      "clip_path": "work/clips/shot_07.mp4",
+      "audio_path": "work/audio/shot07.wav",
+      "audio_duration": 1.6,
       "seed": 1241
     },
     {
@@ -202,19 +202,19 @@
         {
           "speaker": "Mimi",
           "text": "I got it!",
-          "audio_path": "",
+          "audio_path": "work/audio/shot08_line01_2190c13a.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.475
         }
       ],
       "characters": [
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_08.png",
+      "clip_path": "work/clips/shot_08.mp4",
+      "audio_path": "work/audio/shot08.wav",
+      "audio_duration": 1.475,
       "seed": 1242
     },
     {
@@ -224,9 +224,9 @@
         {
           "speaker": "Mimi",
           "text": "Half for you.",
-          "audio_path": "",
+          "audio_path": "work/audio/shot09_line01_23ca9883.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 1.5
         }
       ],
       "characters": [
@@ -234,10 +234,10 @@
         "Bobo"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_09.png",
+      "clip_path": "work/clips/shot_09.mp4",
+      "audio_path": "work/audio/shot09.wav",
+      "audio_duration": 1.5,
       "seed": 1243
     },
     {
@@ -247,9 +247,9 @@
         {
           "speaker": "Bobo",
           "text": "Best friends share everything.",
-          "audio_path": "",
+          "audio_path": "work/audio/shot10_line01_314a140d.wav",
           "start": 0.0,
-          "duration": 0.0
+          "duration": 2.425
         }
       ],
       "characters": [
@@ -257,27 +257,30 @@
         "Mimi"
       ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
-      "audio_path": "",
-      "audio_duration": 0.0,
+      "keyframe_path": "work/keyframes/shot_10.png",
+      "clip_path": "work/clips/shot_10.mp4",
+      "audio_path": "work/audio/shot10.wav",
+      "audio_duration": 2.425,
       "seed": 1244
     },
     {
       "id": 11,
-      "visual": "Wide shot of the jungle in golden light, the two monkeys small on a branch.",
+      "visual": "Wide shot of the jungle in golden light, Bobo and Mimi small on a branch.",
       "dialogue": [],
-      "characters": [],
+      "characters": [
+        "Bobo",
+        "Mimi"
+      ],
       "user_keyframe": "",
-      "keyframe_path": "",
-      "clip_path": "",
+      "keyframe_path": "work/keyframes/shot_11.png",
+      "clip_path": "work/clips/shot_11.mp4",
       "audio_path": "",
       "audio_duration": 0.0,
       "seed": 1245
     }
   ],
   "music": {
-    "mode": "generate",
+    "mode": "none",
     "prompt": "gentle playful acoustic jungle adventure music, ukulele and marimba, light and cheerful",
     "file": "",
     "volume": 0.18,

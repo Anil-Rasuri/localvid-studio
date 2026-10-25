@@ -230,7 +230,7 @@ with gr.Blocks(title="LocalVid Studio") as demo:
                 "fixed voices and one music track. Everything runs on this computer.")
 
     with gr.Row():
-        project_dd = gr.Dropdown(choices=list_projects(), label="Project", scale=3)
+        project_dd = gr.Dropdown(choices=list_projects(), value=(list_projects() or [None])[0], label="Project", scale=3)
         new_name = gr.Textbox(label="New project name", scale=3)
         new_btn = gr.Button("Create", scale=1)
 
@@ -316,6 +316,7 @@ with gr.Blocks(title="LocalVid Studio") as demo:
                     script_box, m_mode, m_prompt, m_file, m_vol, m_duck, shots_tbl, video, gallery]
     new_btn.click(create_project, new_name, [project_dd, new_name])
     project_dd.change(load_project, project_dd, load_outputs)
+    demo.load(load_project, project_dd, load_outputs)
     s_btn.click(save_settings, [project_dd, style, negative, size, fps, seed, subtitles], s_msg)
     c_btn.click(save_characters, [project_dd, *char_inputs], c_msg)
     llm_btn.click(llm_script, [project_dd, idea, secs], script_box)
