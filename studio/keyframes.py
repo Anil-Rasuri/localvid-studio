@@ -72,7 +72,7 @@ class KeyframeGenerator:
             pipe.enable_model_cpu_offload()
         else:
             pipe.to(self.cfg["device"])
-        pipe.enable_vae_tiling()
+        pipe.vae.enable_tiling()
         self.pipe = pipe
 
     def _apply_loras(self, shot: Shot) -> None:
